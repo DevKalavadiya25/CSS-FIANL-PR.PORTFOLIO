@@ -32,7 +32,7 @@ html {
 
 body {
 
-    background: var(-hg-color);
+    background: var(-bg-color);
 
     font-family: "Poppins", sans-serif;
     color: var(--text-color);
@@ -92,14 +92,23 @@ html::-webkit-scrollbar-thumb {
     border-bottom: 3px solid var(--main-color);
 }
 
-#menu-icon {
+#menu-icons {
     font-size: 3.6rem;
     color: var(--main-color);
     display: none;
 }
 
 @media(max-width:995px) {
-    #menu-icon {
+    
+    /* #menu-icons {
+        font-size: 50px;
+        color: aqua;
+        display: flex;
+
+
+    } */
+   
+    .navbar{
         display: none;
     }
 
@@ -189,6 +198,12 @@ span {
 .home-contant p {
     font-size: 1.8rem;
     font-weight: 700;
+}
+
+@media screen and (width<500px){
+       .home{
+        flex-direction: column;
+       }
 }
 
 .social-icons a {
@@ -291,6 +306,7 @@ span {
     /* border-radius: 1rem; */
     gap: 1.8rem;
     flex-wrap: wrap;
+    /* border: 1px solid white; */
 
 
 }
@@ -339,10 +355,16 @@ span {
         margin: 0;
         padding: 0;
         flex-wrap: wrap;
+        flex-direction: column;
+    }
+    
+    #container-w{
+        width:90%;
+        border:1px solid white;
     }
 
-    .skills.container.row {
-        grid-template-columns: repeat(2, 1fr);
+    .skills .container .row {
+        grid-template-columns: repeat(3, 2fr);
         padding: 2rem, 0.2rem, 0.2rem;
         gap: 1rem;
     }
@@ -582,17 +604,17 @@ span {
     color:black;
 }
 .footer .social a{
-    font-size:25px;
-    color: black;
-    border:2px solid black;
-    width:42px;
-    height:42px;
-    line-height:42px;
-    display: inline-block;
-    text-align: center;
-    border-radius:50%;
-    margin:0 10px;
-     transition:0.3s ease;
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    background: transparent;
+    border: 0.2rem solid var(--bg-color);
+    font-size: 3rem;
+    border-radius: 50%;
+    color: var(--bg-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s cubic-bezier(0.45, -0.26, 0.58, 1);
+    box-sizing: border-box;
 }
 
 .footer .social a:hover{
@@ -607,6 +629,14 @@ span {
     line-height:1.8;
     margin-bottom:0;
     text-align: center;
+}
+
+.social a{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    flex-wrap: wrap;
 }
 .footer ul li a{
     color:black;
